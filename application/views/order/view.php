@@ -24,24 +24,38 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $no = 1;
-                                            if ($data == false) { ?>
-                                                <td colspan='5' align='center'>Data Kosong</td>
-                                                <?php
-                                                } else {
-                                                    foreach ($data as $x) { ?>
+                                            if ($data3->status == "2") {
+                                                $no = 1;
+                                                if ($data == false) { ?>
+                                                    <td colspan='5' align='center'>Data Kosong</td>
+                                                    <?php
+                                                        } else {
+                                                            foreach ($data as $x) { ?>
+                                                        <tr>
+                                                            <td><?= $no++; ?></td>
+                                                            <td><?= $x->item ?></td>
+                                                            <td><?= $x->qty_order ?></td>
+                                                            <td><?= $x->satuan ?></td>
+                                                            <td><?= $x->tanggal ?></td>
+                                                        </tr>
+                                                    <?php } ?>
                                                     <tr>
-                                                        <td><?= $no++; ?></td>
-                                                        <td><?= $x->item ?></td>
-                                                        <td><?= $x->qty_order ?></td>
-                                                        <td><?= $x->satuan ?></td>
-                                                        <td><?= $x->tanggal ?></td>
+                                                        <td>Ket</td>
+                                                        <td colspan="5">
+                                                            <?= $data3->ket; ?>
+                                                        </td>
                                                     </tr>
                                         </tbody>
-                                    <?php } ?>
-                                    <td colspan='5' align="center">
-                                        <a href="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#selesai">Selesai</a>
-                                    </td>
+                                        <td colspan='5' align="center">
+                                            <a href="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#selesai">Selesai</a>
+                                        </td>
+                                    <?php }
+                                    } elseif ($data3->status == "1") { ?>
+                                    <td colspan='5' align='center'>Data Kosong</td>
+                                <?php  } elseif ($data3->status == "3") { ?>
+                                    <td colspan='5' align='center'>Data Kosong</td>
+                                <?php } elseif ($data3->status == "4") { ?>
+                                    <td colspan='5' align='center'>Data Kosong</td>
                                 <?php } ?>
                                 </table>
 

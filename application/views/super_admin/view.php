@@ -25,39 +25,60 @@
                                         </thead>
                                         <tbody>
                                             <?php
-                                            $no = 1;
-                                            if ($data2 == false) { ?>
-                                                <td colspan='5' align='center'>Data Kosong</td>
-                                                <?php
-                                                } else {
-                                                    foreach ($data2 as $x) { ?>
+                                            if ($data4->status == "3") {
 
-                                                    <tr>
-                                                        <td><?= $no++; ?></td>
-                                                        <td><?= $x->item ?></td>
-                                                        <td><?= $x->qty_order ?></td>
-                                                        <td><?= $x->satuan ?></td>
-                                                        <td><?= $x->tanggal ?></td>
-                                                        <td>
-                                                            <a href="<?= base_url('super_admin/edit/') . $x->id_order ?>"><i class="btn btn-primary"> Edit</i></a>
-                                                            <a href="<?= base_url('super_admin/hapus/') . $x->id_order ?>" onclick="return confirm('Yakin Hapus?')"><i class="btn btn-danger"> Hapus</i></a>
-                                                        </td>
-                                                    </tr>
+                                                $no = 1;
+                                                if ($data2 == false) { ?>
+                                                    <td colspan='5' align='center'>Data Kosong</td>
+                                                    <?php
+                                                        } else {
+                                                            foreach ($data2 as $x) { ?>
+
+                                                        <tr>
+                                                            <td><?= $no++; ?></td>
+                                                            <td><?= $x->item ?></td>
+                                                            <td><?= $x->qty_order ?></td>
+                                                            <td><?= $x->satuan ?></td>
+                                                            <td><?= $x->tanggal ?></td>
+                                                            <td>
+                                                                <a href="<?= base_url('super_admin/edit/') . $x->id_order ?>"><i class="btn btn-primary"> Edit</i></a>
+                                                                <a href="<?= base_url('super_admin/hapus/') . $x->id_order ?>" onclick="return confirm('Yakin Hapus?')"><i class="btn btn-danger"> Hapus</i></a>
+                                                            </td>
+                                                        </tr>
                                         </tbody>
                                     <?php } ?>
-                                    <td colspan='6' align="center">
 
-                                        <?php $no = 1;
+                                    <?php $no = 1;
+
+
                                             foreach ($data2 as $k) :
                                                 if ($no++ > 1) break;
                                                 ?>
+                                        <td colspan='4' align="life">
+                                            <a href="<?= base_url('super_admin/ket/') . $k->id_keranjang ?>" class="btn btn-primary">Tambah Keterangan</a>
+                                            <hr>
+
+
+                                            <input type="text" disabled name="ket" class="form-control" value="<?= $data3->ket ?>">
+                                        </td>
+
+                                        <td colspan='6' align="center">
+
+
                                             <a href="<?= base_url('super_admin/diterima/') . $k->id_keranjang ?>"><i class="btn btn-primary"> DI Terima</i></a>
 
                                             <a href="<?= base_url('super_admin/ditolak/') . $k->id_keranjang ?>"><i class="btn btn-danger">DI Tolak</i></a>
-
+                                            <hr>
                                         <?php endforeach; ?>
-                                    </td>
-                                <?php } ?>
+                                        </td>
+                                    <?php }
+                                    } elseif ($data4->status == "2") { ?>
+                                    <td colspan='5' align='center'>Data Kosong</td>
+                                <?php } elseif ($data4->status == "1") { ?>
+                                    <td colspan='5' align='center'>Data Kosong</td>
+                                <?php } elseif ($data4->status == "4") { ?>
+                                    <td colspan='5' align='center'>Data Kosong</td>
+                                <?php   } ?>
                                 </table>
                             </div>
                         </div>

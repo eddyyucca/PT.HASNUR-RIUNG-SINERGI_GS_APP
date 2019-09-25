@@ -1,7 +1,7 @@
 <?php
 header("Content-type: application/vnd-ms-excel");
 $date = date('Y-m-d');
-header("Content-Disposition: attachment; filename=data barang $date.xls");
+header("Content-Disposition: attachment; filename=Data Sarana $date.xls");
 ?>
 
 <div class="table-responsive">

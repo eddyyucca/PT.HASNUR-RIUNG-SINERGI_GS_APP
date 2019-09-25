@@ -129,6 +129,24 @@ class Seragam extends CI_Controller
         $this->load->view('seragam/view_celana', $data);
         $this->load->view('template/footer');
     }
+
+    public function excel_celana()
+    {
+        $data['data'] = $this->seragam_model->get_celana();
+        $this->load->view('seragam/report_celana', $data);
+    }
+
+    public function excel_kaos()
+    {
+        $data['data'] = $this->seragam_model->get_kaos();
+        $this->load->view('seragam/report_kaos', $data);
+    }
+
+    public function excel_seragam_kerja()
+    {
+        $data['data'] = $this->seragam_model->get_kaos();
+        $this->load->view('seragam/report_seragam_kerja', $data);
+    }
 }
 
 /* End of file Seragam.php */

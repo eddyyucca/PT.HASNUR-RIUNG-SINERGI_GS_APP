@@ -39,6 +39,7 @@ class Order extends CI_Controller
         $data['nama'] = $this->session->userdata('nama_user');
         $data['data'] = $this->order_model->where($id);
         $data['data2'] = $this->order_model->getDataJoin();
+        $data['data3'] = $this->order_model->status($id);
         $data['level_akun'] = $this->session->userdata('level');
 
         $this->load->view('template/header', $data);
@@ -99,6 +100,7 @@ class Order extends CI_Controller
         $data['nama'] = $this->session->userdata('nama_user');
         $data['data'] = $this->order_model->where($id);
         $data['data2'] = $this->order_model->getDataJoin();
+        $data['data3'] = $this->order_model->status($id);
         $data['level_akun'] = $this->session->userdata('level');
 
         $this->load->view('template/header', $data);
@@ -130,6 +132,7 @@ class Order extends CI_Controller
         $data['judul'] = 'Report Barang';
         $data['data'] = $this->order_model->where($id);
         $data['data2'] = $this->order_model->getDataJoin();
+        $data['data3'] = $this->order_model->status($id);
         $this->load->view('order/report', $data);
     }
 }

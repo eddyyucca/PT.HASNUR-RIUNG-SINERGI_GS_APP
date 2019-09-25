@@ -41,8 +41,8 @@
                                                                     } elseif ($x->status == "1") {
                                                                         echo "Selesai";
                                                                     }
-
-                                                                    ?></i></td>
+                                                                    ?>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                         <?php }

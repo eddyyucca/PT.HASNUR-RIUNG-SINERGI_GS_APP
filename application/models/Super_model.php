@@ -39,6 +39,13 @@ class Super_model extends CI_Model
         return $this->db->get()->result();
     }
 
+    public function ket($id)
+    {
+        $this->db->where('id_ker', $id);
+        $x = $this->db->get('order_status');
+        return $x->row();
+    }
+
     public function updatebarang($id, $data)
     {
         $this->db->where('id_order', $id);
@@ -59,6 +66,13 @@ class Super_model extends CI_Model
         $this->db->join('data_barang', 'data_barang.id = data_order.id_barang');
         $this->db->where('id_order', $id);
         return $this->db->get()->row();
+    }
+
+    public function status($id)
+    {
+        $this->db->where('id_ker', $id);
+        $x = $this->db->get('order_status');
+        return $x->row();
     }
 }
 

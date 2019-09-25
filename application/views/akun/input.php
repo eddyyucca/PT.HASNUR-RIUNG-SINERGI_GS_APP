@@ -5,7 +5,7 @@
     <div class="card-body">
         <div class="card shadow mb-4">
             <div class="card-header">
-                Input User
+                <a href="<?= base_url('akun') ?>"><i class="fas fa-arrow-circle-left"> Kembali</i></a>
             </div>
             <div class="card-body">
                 <div class="row">

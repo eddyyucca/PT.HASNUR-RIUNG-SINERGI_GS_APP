@@ -44,6 +44,8 @@ class Super_admin extends CI_Controller
         $data['level_akun'] = $this->session->userdata('level');
         $data['data'] = $this->order_model->alerts_3();
         $data['data2'] = $this->super_model->where($id);
+        $data['data3'] = $this->super_model->ket($id);
+        $data['data4'] = $this->super_model->status($id);
         $data['nama'] = $this->session->userdata('nama_user');
 
         $this->load->view('template/header', $data);
@@ -64,6 +66,33 @@ class Super_admin extends CI_Controller
         $this->load->view('template/header', $data);
         $this->load->view('super_admin/edit', $data);
         $this->load->view('template/footer');
+    }
+
+    public function ket($id)
+    {
+        $data['judul'] = 'Order Persetujuan';
+        $data['alerts'] = $this->super_model->data();
+        $data['alerts_3'] = $this->order_model->alerts_3();
+        $data['level_akun'] = $this->session->userdata('level');
+        $data['data'] = $this->order_model->alerts_3();
+        $data['data2'] = $this->super_model->where_edit($id);
+        $data['data3'] = $this->super_model->ket($id);
+
+        $data['nama'] = $this->session->userdata('nama_user');
+
+        $this->load->view('template/header', $data);
+        $this->load->view('super_admin/ket', $data);
+        $this->load->view('template/footer');
+    }
+
+    public function ket_input($id)
+    {
+        $data = array(
+            'ket' => $this->input->post('ket')
+        );
+        $update = $this->super_model->update_status($id, $data);
+
+        redirect('super_admin/view/' . $id);
     }
 
     public function prosesedit($id)
@@ -91,6 +120,7 @@ class Super_admin extends CI_Controller
 
         $data2 = array(
             'status' => 2,
+            'ket' => $this->input->post('ket'),
         );
 
         $update2 = $this->super_model->update_status($id, $data2);

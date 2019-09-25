@@ -102,6 +102,12 @@ class Catering extends CI_Controller
         $hapus =  $this->catering_model->hapus($id);
         redirect('catering');
     }
+
+    public function excel()
+    {
+        $data['data'] = $this->catering_model->get_data();
+        $this->load->view('catering/excel', $data);
+    }
 }
 
 /* End of file Catering.php */

@@ -14,7 +14,7 @@
                         <form action="<?= base_url('seragam/prosesinput') ?>" method="POST">
                             <div class="form-group">
                                 <label for="type">Seragam/Celana</label>
-                                <select name="type" id="type" class="custom-select" disabled>
+                                <select name="type" id="type" class="custom-select">
                                     <option value="">--PILIH PAKAIAN--</option>
                                     <option value="seragam_kerja" <?= "seragam_kerja" ==  $data->type  ? 'selected=selected' : ''; ?>>Seragam Kerja</option>
                                     <option value="kaos" <?= "kaos" ==  $data->type  ? 'selected=selected' : ''; ?>>Kaos</option>

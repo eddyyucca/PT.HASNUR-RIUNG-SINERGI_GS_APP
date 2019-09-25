@@ -104,6 +104,13 @@ class Order_model extends CI_Model
 
         return $query->result();
     }
+
+    public function status($id)
+    {
+        $this->db->where('id_ker', $id);
+        $x = $this->db->get('order_status');
+        return $x->row();
+    }
 }
 
 /* End of file Order_model.php */

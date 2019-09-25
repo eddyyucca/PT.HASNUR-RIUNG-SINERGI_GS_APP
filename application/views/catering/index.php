@@ -8,7 +8,32 @@
             <div class="table-responsive">
                 <div class="container">
                     <a href="<?= base_url('catering/tambah_catering') ?>" class="btn btn-danger">Tambah Catering</a>
-                    <a href="<?= base_url('catering/excel') ?>" class="btn btn-success">Print Excel</a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+                        Print Excel
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Klik Tombol Print,Data akan terunduh dan tersimpan di folder download
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <a href="<?= base_url('catering/excel') ?>" class="btn btn-success">Print Excel</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <hr>
                 </div>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

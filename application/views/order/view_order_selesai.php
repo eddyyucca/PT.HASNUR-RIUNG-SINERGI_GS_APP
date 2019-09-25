@@ -37,12 +37,18 @@
                                                         <td><?= $x->satuan ?></td>
                                                         <td><?= $x->tanggal; ?></td>
                                                     </tr>
+                                                <?php } ?>
+                                                <tr>
+                                                    <td>Ket</td>
+                                                    <td colspan="5">
+                                                        <?= $data3->ket; ?>
+                                                    </td>
+                                                </tr>
                                         </tbody>
+                                        <td colspan='5' align="center">
+                                            <a href="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#selesai">Print</a>
+                                        </td>
                                     <?php } ?>
-                                    <td colspan='5' align="center">
-                                        <a href="" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#selesai">Print</a>
-                                    </td>
-                                <?php } ?>
                                 </table>
 
                             </div>
